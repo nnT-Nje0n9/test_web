@@ -10,6 +10,38 @@
                 text-shadow: 4px 6px 4px gray;
             }
         </style>
+        <script>
+            const font_size =10;
+            const language = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
+
+            const c = document.getElementById('bg_canvas');
+            const cxt = c.getContext("2d");
+
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+
+            var drops = Array.from({length: c.width/font_size}, () => 1);
+
+            function draw_matrix(){
+               cxt.fillStyle="rgba(0,0,0,0.05)";
+               cxt.fillRect(0,0,c.width,c.height);
+
+               cxt.fillStyle = "#0F0";
+               cxt.font = font_size+'px arial';
+
+               for(var i=0; i<drops.length; i++){
+                  var text = language[Math.floor(Math.random()*language.length)];
+                  cxt.fillText(text,i*font_size,drops[i]*font_size);
+
+                  if(drops[i]*font_size>c.height && Math.random() >0.975){ drops[i]=0; }
+
+                  drops[i]++;
+               }
+
+            }
+
+            setInterval(draw_matrix,33);
+        </script>
     </head>
     <body>
         <p><h1>Coffee</h1>
