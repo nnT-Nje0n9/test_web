@@ -1,5 +1,11 @@
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Raleway:100,200,300,500,600,700,800,900");
+@font-face {
+    font-family: 'BMJUA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /*
 	Phase Shift by TEMPLATED
